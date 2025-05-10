@@ -12,6 +12,8 @@ urlpatterns = [
     path('update-info-order/', update_info_order, name='update_info_order'),
 ]
 
+
 urlpatterns += [re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})]
-urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})]
+if settings.DEBUG:
+    urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

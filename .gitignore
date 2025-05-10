@@ -178,3 +178,4 @@ cdn
 logs/*
 !logs/.gitignore
 staticfiles/
+media/*
