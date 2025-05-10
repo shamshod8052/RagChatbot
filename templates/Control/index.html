@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'custom/Control/css/style.css' %}">
+    <script src="{% static 'custom/Control/js/script.js' %}" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="title">Atoqli ot topuvchi</h2>
+
+    <div id="chat-box" class="chat-box"></div>
+
+    <div class="input-group">
+        <input type="text" id="user-input" placeholder="Matn kiriting..." />
+        <button id="send-btn">Yuborish</button>
+    </div>
+</div>
+
+</body>
+</html>
