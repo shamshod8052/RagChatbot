@@ -3,6 +3,8 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import permission_classes, api_view
+from rest_framework.permissions import AllowAny
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -36,7 +38,8 @@ class MessageView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+@api_view(['POST'])
+@permission_classes([AllowAny])
 def ask(request):
     if request.method != "POST":
         return
