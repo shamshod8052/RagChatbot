@@ -4,12 +4,37 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import MessageSerializer
+
 from rag_chat_bot import RAGChatBot
 from .models import Info, Message, BOTS
 
 
 def index(request):
     return render(request, "Control/index.html")
+
+
+class MessageView(APIView):
+    def post(self, request):
+        serializer = MessageSerializer(data=request.data)
+        if serializer.is_valid():
+            question = serializer.validated_data['text']
+
+            bot = BOTS.get(request.user.id)
+            if not bot:
+                bot = RAGChatBot()
+                BOTS[request.user.id] = bot
+
+            answer = bot.ask(question)
+            if request.user.id:
+                Message.objects.create(author_id=request.user.id, question=question, answer=answer)
+
+            return Response({"response": answer}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 def ask(request):
