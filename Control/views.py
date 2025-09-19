@@ -3,6 +3,8 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import AllowAny
 
@@ -20,6 +22,10 @@ def index(request):
 
 
 class MessageView(APIView):
+    @swagger_auto_schema(
+        request_body=MessageSerializer,  # Swagger inputni chiqaradi
+        responses={200: openapi.Response("Manager javobi")}
+    )
     def post(self, request):
         serializer = MessageSerializer(data=request.data)
         if serializer.is_valid():
