@@ -5,7 +5,7 @@ const fileInput = document.querySelector("#file-input");
 const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
-const API_URL = "http://127.0.0.1:8000/api/message/"; // Sizning backend API
+const API_URL = "https://zal.yourproject.uz/api/message/"; // Sizning backend API
 
 const initialInputHeight = messageInput.scrollHeight;
 
