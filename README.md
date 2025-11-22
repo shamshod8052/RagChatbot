@@ -5,9 +5,9 @@ Ushbu loyiha "Energy Gym" sport zali bo‘yicha barcha savollarga avtomatik tarz
 Chatbot **OpenAI** va **LangChain** texnologiyalari orqali “Energy Gym”ga oid ma’lumotlar bazasini tahlil qilib, foydalanuvchilarga kerakli javobni shakllantiradi.
 
 ---
-<img width="1920" height="879" alt="image" src="https://github.com/user-attachments/assets/56defa0d-e5c9-4793-be40-ad7882d52f3e" />
-<img width="1920" height="879" alt="image" src="https://github.com/user-attachments/assets/becf4616-1fa0-47c6-b092-caa0301f1c95" />
-<img width="1920" height="879" alt="image" src="https://github.com/user-attachments/assets/3b288658-c19b-4510-b72c-c40fde6f467b" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/56defa0d-e5c9-4793-be40-ad7882d52f3e" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/becf4616-1fa0-47c6-b092-caa0301f1c95" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/3b288658-c19b-4510-b72c-c40fde6f467b" />
 
 ---
 
